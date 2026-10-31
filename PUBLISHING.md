@@ -30,7 +30,8 @@ and deletes files. The checklist below makes the remaining risks explicit.
 - CI matrix for Node 20 / 22 / 24, kept as `ci/github-actions.yml` because the
   current `gh` token has no `workflow` scope. Copy it to
   `.github/workflows/ci.yml` after granting that scope, then push.
-- `npm pack --dry-run` produces a 9-file package without tests or CI files.
+- `npm pack --dry-run` produces a 13-file package (including the two screenshots)
+  without tests or CI files.
 
 ## Name check
 
