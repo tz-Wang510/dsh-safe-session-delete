@@ -21,6 +21,7 @@
     "lib",
     "cordis.patch.yml",
     "README.md",
+    "README.en.md",
     "CHANGELOG.md",
     "PUBLISHING.md",
     "SECURITY.md",
@@ -39,7 +40,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "test": "node test/verify-host.mjs && node test/verify-client.mjs"
+    "test": "node test/verify-host.mjs && node test/verify-client.mjs && node test/verify-apply.mjs",
+    "prepublishOnly": "npm test"
   },
   "engines": {
     "node": ">=20",
