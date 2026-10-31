@@ -18,6 +18,12 @@ dsh plugin --profile <profile> add "https://github.com/tz-Wang510/dsh-safe-sessi
 
 安装后重启 DSH。npm 包发布后会补充 `dsh plugin add dsh-safe-session-delete` 的安装方式。
 
+## 截图
+
+![设置 → 会话管理](assets/screenshot-settings.png)
+
+![会话行菜单](assets/screenshot-menu.png)
+
 ## 功能
 
 - 会话行 `...` 菜单新增「删除会话」。

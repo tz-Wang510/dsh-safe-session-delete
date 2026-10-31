@@ -36,6 +36,12 @@ If pnpm reports `UNABLE_TO_VERIFY_LEAF_SIGNATURE` on Windows, set
 
 Restart DSH after installation. An npm package is not published yet.
 
+## Screenshots
+
+![Settings → Session management](assets/screenshot-settings.png)
+
+![Session row menu](assets/screenshot-menu.png)
+
 ## Usage
 
 1. Hover a session row and click `...` → **Delete session**, or click the red
