@@ -1,0 +1,7 @@
+# dsh-safe-session-delete bundle patch.
+# The host half registers one authenticated POST route that removes a session
+# log from the JSONL persistence root; the `dsh.client` declaration makes the
+# web app load ./lib/client.js as the matching browser half.
+- insert:
+    - id: dsh-safe-session-delete
+      name: dsh-safe-session-delete
