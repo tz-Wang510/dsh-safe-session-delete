@@ -62,7 +62,7 @@ Remove-Item "<DSH_HOME>\session-trash" -Recurse -Force
 在插件包目录执行（`<profile>` 换成 `desktop`、`web` 等）：
 
 ```powershell
-dsh plugin --profile <profile> add "D:\deepseek\dsh-safe-session-delete"
+dsh plugin --profile <profile> add "<插件目录>"
 ```
 
 `dsh plugin add` 会把包加入 profile 的 `dependencies` 和 `dsh.profile.bundles`。确认 `package.json` 的 `dsh.profile.bundles` 中出现 `dsh-safe-session-delete`，然后重启 DSH。
