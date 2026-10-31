@@ -79,7 +79,7 @@ Content-Type: application/json
 ```
 
 ```http
-GET  /api/dsh-safe-session-delete/status
+POST /api/dsh-safe-session-delete/status
 POST /api/dsh-safe-session-delete/purge-trash
 ```
 

@@ -52,12 +52,14 @@ try {
     [
       [ROUTE, ['POST']],
       [PURGE_ROUTE, ['POST']],
-      [STATUS_ROUTE, ['GET']],
+      [STATUS_ROUTE, ['POST']],
     ],
   )
 
   const statusRoute = routes.find((route) => route.path === STATUS_ROUTE)
-  const status = await statusRoute.fetch(new Request(`http://127.0.0.1${STATUS_ROUTE}`))
+  const status = await statusRoute.fetch(
+    new Request(`http://127.0.0.1${STATUS_ROUTE}`, { method: 'POST' }),
+  )
   assert.deepEqual(await status.json(), { ok: true, retentionDays: 7 })
 
   const deleteRoute = routes.find((route) => route.path === ROUTE)
