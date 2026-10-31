@@ -2,6 +2,14 @@
   "name": "dsh-safe-session-delete",
   "version": "0.2.0",
   "description": "Delete DeepSeek Harness sessions into a recoverable trash folder with a 30-day retention window, projection-cache cleanup, and a Settings management page.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tz-Wang510/dsh-safe-session-delete.git"
+  },
+  "homepage": "https://github.com/tz-Wang510/dsh-safe-session-delete#readme",
+  "bugs": {
+    "url": "https://github.com/tz-Wang510/dsh-safe-session-delete/issues"
+  },
   "type": "module",
   "main": "lib/index.js",
   "exports": {

@@ -4,6 +4,21 @@ This file is for maintainers. The plugin is functionally ready for a GitHub
 release, but "risk-free" is not a claim anyone can make for a plugin that moves
 and deletes files. The checklist below makes the remaining risks explicit.
 
+## Current release status (2026-10-31)
+
+- Public repository: https://github.com/tz-Wang510/dsh-safe-session-delete
+- Release `v0.2.0`:
+  https://github.com/tz-Wang510/dsh-safe-session-delete/releases/tag/v0.2.0
+- GitHub-tarball install verified with
+  `dsh plugin --profile web add <release-tgz>` on Windows. This machine needed
+  `NODE_OPTIONS=--use-system-ca` for pnpm's certificate chain.
+- npm: **not published** — this machine has no npm login (`npm whoami` is
+  unauthenticated). Do not run `npm publish` until `npm login` is complete.
+- Market: entry prepared at
+  `market/tz-Wang510__dsh-safe-session-delete.yml`. The registry requires the
+  GitHub repository to be at least 1 day old, so submit the PR on or after
+  2026-11-01.
+
 ## What is already in place
 
 - MIT license, `LICENSE`, `CHANGELOG.md`, `SECURITY.md`.
@@ -25,28 +40,23 @@ Similar existing packages include `dsh-session-trash`, `dsh-session-recycle`,
 `dsh-session-recycle-bin`, and `dsh-session-delete`; mention only your own
 package, and do not copy their code or README text.
 
-## Before the first public release
+## Remaining steps
 
-1. Run `npm test` on Windows, Linux, and macOS. Only Windows + DSH
-   `0.2.1-rc.5` has been exercised in a real browser so far.
-2. Run the isolated-host smoke test once per supported DSH release:
-   - install into a throwaway profile;
-   - delete a copied session;
-   - confirm the log is under `session-trash`;
-   - confirm the original directory and projection cache are gone;
-   - restart once and confirm the sidebar row stays gone.
-3. Update the screenshot in `docs/`, the compatibility table in `README.md`,
-   and `CHANGELOG.md`.
-4. Check that no local path, token, user name, or session id is present in the
-   repository (`git grep -n "C:\\\\Users"`, `git grep -n "session-"`).
-5. Create the GitHub repository, push `main`, and enable private vulnerability
-   reporting / Security Advisories.
-6. `npm pack --dry-run` once more, then `npm publish --access public`.
-7. Verify the published package with a clean install:
+1. Run `npm test` on Linux and macOS. Only Windows + DSH `0.2.1-rc.5` has been
+   exercised in a real browser so far.
+2. Enable private vulnerability reporting / Security Advisories on the GitHub
+   repository.
+3. If npm distribution is wanted: `npm login`, then
+   `npm publish --access public`, then verify with
    `dsh plugin --profile web add dsh-safe-session-delete`.
-8. For the DSH market, open a PR against
+4. On or after 2026-11-01, copy
+   `market/tz-Wang510__dsh-safe-session-delete.yml` to
+   `data/plugins/tz-Wang510__dsh-safe-session-delete.yml` in a fork of
    [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)
-   (the market reads that registry; do not PR the market app repository).
+   and open one PR. Do not edit the generated READMEs.
+5. Optional: add a sanitized `screenshots.json` and screenshot assets. The
+   earlier local screenshot was removed because it contained real session ids.
+6. Re-run the isolated-host smoke test once per new supported DSH release.
 
 ## Known risks to disclose
 

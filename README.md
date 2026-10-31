@@ -4,6 +4,18 @@
 
 DSH 原生只有**归档**，没有删除。这个插件补上删除能力：在会话行的 `...` 菜单、悬停按钮和「设置 → 会话管理」里加入删除入口，确认后由宿主端把会话日志移入回收站、清理投影缓存，并让列表立即刷新。
 
+## 安装
+
+从 GitHub Release 的预构建 tarball 安装（`<profile>` 换成 `desktop`、`web` 等）：
+
+```powershell
+dsh plugin --profile <profile> add "https://github.com/tz-Wang510/dsh-safe-session-delete/releases/download/v0.2.0/dsh-safe-session-delete-0.2.0.tgz"
+```
+
+如果本机 pnpm 报 `UNABLE_TO_VERIFY_LEAF_SIGNATURE`，在命令前设置 `$env:NODE_OPTIONS="--use-system-ca"` 再执行。
+
+安装后重启 DSH。npm 包发布后会补充 `dsh plugin add dsh-safe-session-delete` 的安装方式。
+
 ## 功能
 
 - 会话行 `...` 菜单新增「删除会话」。
